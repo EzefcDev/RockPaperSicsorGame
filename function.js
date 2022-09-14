@@ -33,13 +33,8 @@ const pcChange = document.querySelector("#pcImg");
 const textPlayer = document.querySelector("#textplayer");
 const textPc = document.querySelector("#textpc");
 const textTie = document.querySelector("#texttie");
-// const textInfo = document.querySelector("#textinfo");
 const startGame = document.querySelector("button");
-const containerPlayer = document.querySelector("#containerplayer");
-const containerPc = document.querySelector("#containerpc");
-const main = document.querySelector("main");
 const newLabel = document.querySelector("#buttonreturn");
-const returnGame = document.querySelector("#return");
 
 let iPointer = 0;
 let iPointerPc = 0;
@@ -69,8 +64,7 @@ const point = (winPlayer, pcWin) => {
 };
 
 const selectObjet = (event) => {
-  let click = event.target.id;
-  // textInfo.textContent = "";
+  const click = event.target.id;
   if (click && iSelector < 3 && enableFace) {
     enableStart = false;
     iSelector++;
@@ -110,13 +104,12 @@ const whatIsTheWinner = (player, pc) => {
     playerChange.src = dataImage[3];
     pcChange.src = dataImage[4];
     textPlayer.textContent = "WINNER";
-    recycle();
   } else {
     playerChange.src = dataImage[4];
     pcChange.src = dataImage[3];
     textPlayer.textContent = "Loser";
-    recycle();
   }
+  recycle();
 };
 
 playerChange.addEventListener("click", selectObjet);
@@ -139,7 +132,6 @@ const start = (event) => {
         textPc.textContent = "LOSER";
         textTie.textContent = "";
       } else {
-        //aca va la funcion para mostrar el ganador
         whatIsTheWinner(true, false);
       }
     } else if (
@@ -156,7 +148,6 @@ const start = (event) => {
         textPc.textContent = "WINNER";
         textTie.textContent = "";
       } else {
-        //aca va la funcion para mostrar el ganador
         whatIsTheWinner(false, true);
       }
     } else {
@@ -169,7 +160,5 @@ const start = (event) => {
 
 playerChange.src = dataImage[3];
 pcChange.src = dataImagePc[3];
-// textInfo.textContent =
-// "Para empezar el juego haz click en la cara para seleccionar tu opcion";
 
 startGame.addEventListener("click", start);

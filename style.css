@@ -40,13 +40,10 @@ main img {
   height: 200px;
   border-radius: 50%;
 }
-/* 
-button {
-  margin: 100px 0px 50px;
-  width: 100px;
-  height: 50px;
-  background-color: white;
-} */
+
+#playerImg{
+  cursor: pointer;
+}
 
 button {
   /* Variables */
@@ -60,6 +57,7 @@ button {
   border: none;
   border-radius: var(--button_radius);
   background: var(--button_outline_color);
+  cursor: pointer;
 }
 
 .button_top {
